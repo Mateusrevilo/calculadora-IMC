@@ -1,0 +1,141 @@
+/* ===== Reset e variáveis ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-primaria: #0d9488;
+  --cor-primaria-escura: #0f766e;
+  --cor-fundo: #f0fdfa;
+  --cor-card: #ffffff;
+  --cor-texto: #134e4a;
+  --cor-texto-suave: #5eead4;
+  --cor-borda: #99f6e4;
+  --sombra: 0 4px 20px rgba(13, 148, 136, 0.15);
+  --sombra-focus: 0 0 0 3px rgba(13, 148, 136, 0.25);
+  --raio: 12px;
+  --fonte: "Outfit", system-ui, sans-serif;
+}
+
+/* ===== Base ===== */
+body {
+  font-family: var(--fonte);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  line-height: 1.5;
+}
+
+/* ===== Card principal ===== */
+.calculadora {
+  background: var(--cor-card);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.calculadora h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--cor-primaria-escura);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* ===== Formulário ===== */
+.grupo {
+  margin-bottom: 1.25rem;
+}
+
+.grupo label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--cor-texto);
+  margin-bottom: 0.5rem;
+}
+
+.grupo input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: var(--fonte);
+  border: 2px solid var(--cor-borda);
+  border-radius: 8px;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.grupo input::placeholder {
+  color: var(--cor-texto-suave);
+}
+
+.grupo input:hover {
+  border-color: var(--cor-primaria);
+}
+
+.grupo input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: var(--sombra-focus);
+}
+
+/* ===== Botão ===== */
+.botao {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--fonte);
+  color: #fff;
+  background: var(--cor-primaria);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.botao:hover {
+  background: var(--cor-primaria-escura);
+}
+
+.botao:active {
+  transform: scale(0.98);
+}
+
+/* ===== Área de resultado ===== */
+.resultado-area {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--cor-fundo);
+  border-radius: 8px;
+  border-left: 4px solid var(--cor-primaria);
+  min-height: 3rem;
+}
+
+.resultado-area p {
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+}
+
+.resultado-area p:empty {
+  display: none;
+}
+
+.resultado-area p:not(:empty) {
+  font-weight: 500;
+}
+
+/* ===== Tipografia - Google Fonts ===== */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap");
